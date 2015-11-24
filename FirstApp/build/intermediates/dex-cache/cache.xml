@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/jeronimo/AndroidStudioProjects/MyApplication/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/jeronimo/AndroidStudioProjects/MyApplication/app/build/intermediates/pre-dexed/debug/classes-98404fbfbcc65f0b5f8bed5d69411732c5176b54.jar" />
+    </item>
+    <item
+        jar="/home/jeronimo/AndroidStudioProjects/MyApplication/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/home/jeronimo/AndroidStudioProjects/MyApplication/app/build/intermediates/pre-dexed/debug/classes-93e41755d3b08401d134ff6d702eb7a04afeddac.jar" />
+    </item>
+    <item
+        jar="/home/jeronimo/AndroidStudioProjects/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/jeronimo/AndroidStudioProjects/MyApplication/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-3cdf724e9a99485c2ab96cdbe4489884a3266c37.jar" />
+    </item>
+    <item
+        jar="/home/jeronimo/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/home/jeronimo/AndroidStudioProjects/MyApplication/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-2918e34511bab74e75f320760c7f5db516087be2.jar" />
+    </item>
+    <item
+        jar="/home/jeronimo/AndroidStudioProjects/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/home/jeronimo/AndroidStudioProjects/MyApplication/app/build/intermediates/pre-dexed/debug/classes-d880ca6aba7bade4c8c8b8b9d0eff0cd410f34dd.jar" />
+    </item>
+
+</items>
