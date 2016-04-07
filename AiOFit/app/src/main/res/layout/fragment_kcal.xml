@@ -1,0 +1,174 @@
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jeronimo.aiofit.KcalFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="24dp"
+        android:layout_y="83dp"
+        >
+
+        <EditText
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/weightText"
+            android:textColor="@color/Negro"
+            android:hint="Peso (Kg)" />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <EditText
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/heightText"
+        android:layout_x="142dp"
+        android:layout_y="97dp"
+        android:textColor="@color/Negro" />
+
+    <EditText
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/yearText"
+        android:layout_x="257dp"
+        android:layout_y="97dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alturaView"
+        android:id="@+id/heightView"
+        android:layout_x="160dp"
+        android:layout_y="84dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edadView"
+        android:id="@+id/yearView"
+        android:layout_x="272dp"
+        android:layout_y="84dp"
+        android:textColor="@color/Negro" />
+
+    <info.hoang8f.widget.FButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calcularButton"
+        android:id="@+id/calcButton"
+        android:layout_x="153dp"
+        android:layout_y="159dp"
+        fbutton:buttonColor="@color/fbutton_color_turquoise"
+        fbutton:shadowEnabled="true"
+        fbutton:shadowColor="@color/fbutton_color_orange"
+        fbutton:shadowHeight="5dp"
+        fbutton:cornerRadius="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/basalView"
+        android:id="@+id/basalView"
+        android:layout_x="24dp"
+        android:layout_y="275dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sedentarioView"
+        android:id="@+id/sedentarioView"
+        android:layout_x="24dp"
+        android:layout_y="298dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="158dp"
+        android:layout_height="37dp"
+        android:text="@string/ligeroView"
+        android:id="@+id/ligeroView"
+        android:layout_x="24dp"
+        android:layout_y="320dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="158dp"
+        android:layout_height="37dp"
+        android:text="@string/moderadoView"
+        android:id="@+id/moderadoView"
+        android:layout_x="24dp"
+        android:layout_y="360dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="158dp"
+        android:layout_height="37dp"
+        android:text="@string/fuerteView"
+        android:id="@+id/fuerteView"
+        android:layout_x="24dp"
+        android:layout_y="400dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="158dp"
+        android:layout_height="37dp"
+        android:text="@string/ffuerteView"
+        android:id="@+id/ffuerteView"
+        android:layout_x="24dp"
+        android:layout_y="440dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/basalText"
+        android:layout_x="250dp"
+        android:layout_y="275dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sedentarioText"
+        android:layout_x="250dp"
+        android:layout_y="298dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ligeroText"
+        android:layout_x="250dp"
+        android:layout_y="320dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/moderadoText"
+        android:layout_x="250dp"
+        android:layout_y="360dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fuerteText"
+        android:layout_x="250dp"
+        android:layout_y="400dp"
+        android:textColor="@color/Negro" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ffuerteText"
+        android:layout_x="250dp"
+        android:layout_y="440dp"
+        android:textColor="@color/Negro" />
+
+</AbsoluteLayout>

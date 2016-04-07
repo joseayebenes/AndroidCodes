@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.example.jeronimo.aiofit.RMFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:text="@string/brzyckiView"
+        android:id="@+id/textView3"
+        android:layout_x="104dp"
+        android:layout_y="68dp"
+        android:layout_gravity="center_horizontal|top"
+        android:singleLine="false"
+        android:enabled="false"
+        android:editable="false"
+        android:textColor="@color/Negro"
+        android:gravity="center_vertical" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calcularButton"
+        android:id="@+id/calcButton"
+        android:layout_x="217dp"
+        android:layout_y="200dp"
+        />
+
+    <TextView
+        android:layout_width="105dp"
+        android:layout_height="43dp"
+        android:id="@+id/result1Text"
+        android:layout_x="82dp"
+        android:layout_y="203dp"
+        android:textColor="@color/Negro" />
+
+    <EditText
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/weightText"
+        android:layout_x="42dp"
+        android:layout_y="122dp"
+        android:text="@string/pesoView" />
+
+    <EditText
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/repText"
+        android:layout_x="208dp"
+        android:layout_y="122dp"
+        android:text="@string/repView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:text="@string/wldayView"
+        android:id="@+id/textView4"
+        android:layout_x="132dp"
+        android:layout_y="321dp"
+        android:layout_gravity="center_horizontal|top"
+        android:singleLine="false"
+        android:enabled="false"
+        android:editable="false"
+        android:textColor="@color/Negro"
+        android:gravity="center_vertical" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calcularButton"
+        android:id="@+id/calcButton2"
+        android:layout_x="217dp"
+        android:layout_y="435dp" />
+
+    <TextView
+        android:layout_width="105dp"
+        android:layout_height="43dp"
+        android:id="@+id/resultText2"
+        android:layout_x="82dp"
+        android:layout_y="435dp"
+        android:textColor="@color/Negro" />
+
+    <EditText
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/weightText2"
+        android:layout_x="42dp"
+        android:layout_y="373dp"
+        android:text="@string/pesoView" />
+
+    <EditText
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/repText2"
+        android:layout_x="208dp"
+        android:layout_y="373dp"
+        android:text="@string/repView" />
+
+</AbsoluteLayout>

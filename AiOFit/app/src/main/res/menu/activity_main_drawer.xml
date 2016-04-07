@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_inicio" android:icon="@drawable/ic_action_name"
+            android:title="Inicio" />
+        <item android:id="@+id/nav_rm" android:icon="@drawable/ic_action_rm"
+            android:title="1RM" />
+        <item android:id="@+id/nav_fat" android:icon="@drawable/ic_action_fat"
+            android:title="Grasa" />
+        <item android:id="@+id/nav_kcal" android:icon="@drawable/ic_action_kcal"
+            android:title="Kcal" />
+        <item android:id="@+id/nav_macro" android:icon="@drawable/ic_action_macro"
+            android:title="Macros" />
+        <item android:id="@+id/nav_progresion" android:icon="@drawable/ic_action_progresion"
+            android:title="Progresion" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_share"
+                android:title="Share" />
+            <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
