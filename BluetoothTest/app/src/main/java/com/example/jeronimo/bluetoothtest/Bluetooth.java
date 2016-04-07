@@ -122,7 +122,7 @@ public class Bluetooth {
         if (mConnectThread != null) {
             mConnectThread.cancel();
             mConnectThread = null;
-        }
+        }https://www.google.es/?gws_rd=ssldeve
 
         // Cancel any thread currently running a connection
         if (mConnectedThread != null) {

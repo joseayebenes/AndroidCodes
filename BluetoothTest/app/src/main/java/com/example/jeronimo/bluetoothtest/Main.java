@@ -1,6 +1,7 @@
 package com.example.jeronimo.bluetoothtest;
 
 import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,19 +12,23 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class Main extends ActionBarActivity {
 
     public final String TAG = "Main";
 
-    /*private SeekBar elevation;
-    private TextView debug;*/
     private TextView status;
     private Bluetooth bt;
 
-    private Button up, down, left, right, stop;
+    private Button up, down, left, right, connect, disconnect;
+    private ToggleButton velButton;
+
+    private boolean forward, backward, leftt, rightt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,35 +39,28 @@ public class Main extends ActionBarActivity {
         down = (Button)findViewById(R.id.downButton);
         left = (Button)findViewById(R.id.leftButton);
         right = (Button)findViewById(R.id.rightButton);
-        stop = (Button)findViewById(R.id.stopButton);
-
-        /*findViewById(R.id.upButton).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                bt.sendMessage("L");
-            }
-        });
-
-        findViewById(R.id.upButton).setOnLongClickListener(new View.OnLongClickListener() {
-            public boolean onLongClick(View v) {
-                bt.sendMessage("L");
-                return true;
-            }
-        });*/
-
-        findViewById(R.id.upButton).setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) bt.sendMessage("F");
-                //if(motionEvent.getAction() == MotionEvent.ACTION_UP) bt.sendMessage("l");
-                return true;
-            }
-        });
+        connect = (Button)findViewById(R.id.connectButton);
+        disconnect = (Button)findViewById(R.id.disconnectButton);
+        status = (TextView)findViewById(R.id.textView);
+        velButton = (ToggleButton)findViewById(R.id.toggleButton);
 
         findViewById(R.id.downButton).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) bt.sendMessage("B");
-                //if(motionEvent.getAction() == MotionEvent.ACTION_UP) bt.sendMessage("l");
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    backward = true;
+                    if(forward) bt.sendMessage("S");
+                    else if(leftt) bt.sendMessage("E");
+                    else if(rightt) bt.sendMessage("D");
+                    else bt.sendMessage("B");
+                }
+                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    backward = false;
+                    if(forward) bt.sendMessage("F");
+                    else if(leftt) bt.sendMessage("L");
+                    else if(rightt) bt.sendMessage("R");
+                    else bt.sendMessage("S");
+                }
                 return true;
             }
         });
@@ -70,8 +68,20 @@ public class Main extends ActionBarActivity {
         findViewById(R.id.rightButton).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) bt.sendMessage("R");
-                //if(motionEvent.getAction() == MotionEvent.ACTION_UP) bt.sendMessage("l");
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    rightt = true;
+                    if(forward) bt.sendMessage("C");
+                    else if(backward) bt.sendMessage("D");
+                    else if(leftt) bt.sendMessage("S");
+                    else bt.sendMessage("R");
+                }
+                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    rightt = false;
+                    if(forward) bt.sendMessage("F");
+                    else if(backward) bt.sendMessage("B");
+                    else if(leftt) bt.sendMessage("L");
+                    else bt.sendMessage("S");
+                }
                 return true;
             }
         });
@@ -79,70 +89,98 @@ public class Main extends ActionBarActivity {
         findViewById(R.id.leftButton).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) bt.sendMessage("L");
-                //if(motionEvent.getAction() == MotionEvent.ACTION_UP) bt.sendMessage("l");
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    leftt = true;
+                    if(forward) bt.sendMessage("A");
+                    else if(backward) bt.sendMessage("E");
+                    else if(rightt) bt.sendMessage("S");
+                    else bt.sendMessage("L");
+                }
+                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    leftt = false;
+                    if(forward) bt.sendMessage("F");
+                    else if(backward) bt.sendMessage("B");
+                    else if(rightt) bt.sendMessage("R");
+                    else bt.sendMessage("S");
+                }
                 return true;
             }
         });
 
-        findViewById(R.id.stopButton).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.upButton).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) bt.sendMessage("S");
-                //if(motionEvent.getAction() == MotionEvent.ACTION_UP) bt.sendMessage("l");
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    forward = true;
+                    if(backward) bt.sendMessage("S");
+                    else if(leftt) bt.sendMessage("A");
+                    else if(rightt) bt.sendMessage("C");
+                    else bt.sendMessage("F");
+                }
+                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    forward = false;
+                    if(backward) bt.sendMessage("B");
+                    else if(leftt) bt.sendMessage("L");
+                    else if(rightt) bt.sendMessage("R");
+                    else bt.sendMessage("S");
+                }
                 return true;
             }
         });
 
-        /*debug = (TextView) findViewById(R.id.textDebug);
-        status = (TextView) findViewById(R.id.textStatus);
-
-        findViewById(R.id.restart).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                connectService();
+        findViewById(R.id.connectButton).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    bt = new Bluetooth(Main.this, mHandler);
+                    connectService();
+                }
+                return true;
             }
         });
 
-        elevation = (SeekBar) findViewById(R.id.seekBar);
-        elevation.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
+        findViewById(R.id.disconnectButton).setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                Log.d("Seekbar","onStopTrackingTouch ");
-                int progress = seekBar.getProgress();
-                String p = String.valueOf(progress);
-                debug.setText(p);
-                bt.sendMessage(p);
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    bt.stop();
+                    status.setText(R.string.initialText);
+                }
+                return true;
             }
+        });
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                Log.d("Seekbar","onStartTrackingTouch ");
+        velButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    velButton.setText(R.string.fastVel);
+                    bt.sendMessage("V");
+                } else {
+                    velButton.setText(R.string.normalVel);
+                    bt.sendMessage("v");
+                }
             }
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                //Log.d("Seekbar", "onProgressChanged " + progress);
-            }
-        });*/
+        });
 
         bt = new Bluetooth(this, mHandler);
-        connectService();
-
     }
 
     public void connectService(){
         try {
-            //status.setText("Connecting...");
+            status.setText(R.string.connectingText);
             BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+            if(bluetoothAdapter == null){
+                Toast.makeText(getApplicationContext(), "Bluetooth Device Not Available", Toast.LENGTH_LONG).show();
+                finish();
+            }
             if (bluetoothAdapter.isEnabled()) {
                 bt.start();
                 bt.connectDevice("HC-06");
                 Log.d(TAG, "Btservice started - listening");
-                //status.setText("Connected");
+                status.setText(R.string.connectedText);
             } else {
-                Log.w(TAG, "Btservice started - bluetooth is not enabled");
-                //status.setText("Bluetooth Not enabled");
+                Intent turnBTon = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(turnBTon,1);
             }
         } catch(Exception e){
             Log.e(TAG, "Unable to start bt ", e);

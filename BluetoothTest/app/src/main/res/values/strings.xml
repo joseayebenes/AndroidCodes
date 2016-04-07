@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Arduino RC Control</string>
     <string name="action_settings">Settings</string>
+    <string name="initialText">Disconnected</string>
+    <string name="connectingText">Connecting</string>
+    <string name="connectedText">Connected</string>
+    <string name="normalVel">Normal Mode</string>
+    <string name="fastVel">Fast Mode</string>
 </resources>
