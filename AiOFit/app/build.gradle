@@ -29,6 +29,12 @@ android {
             }
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
 }
 
 dependencies {
@@ -38,4 +44,13 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'info.hoang8f:fbutton:1.0.5'
     compile 'com.wrapp.floatlabelededittext:library:0.0.6'
+    compile 'com.firebase:firebase-client-android:2.5.2+'
+    repositories {
+        mavenCentral()
+        maven {
+            url  'http://dl.bintray.com/gigamole/maven/'
+        }
+    }
+    compile 'com.github.gigamole.arcprogressstackview:library:+'
+
 }

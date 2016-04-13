@@ -10,4 +10,14 @@
     tools:context=".MainActivity"
     >
 
+
+    <com.gigamole.library.ArcProgressStackView
+        android:id="@+id/apsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:apsv_preview_colors="@array/polluted_waves"
+        app:apsv_model_bg_enabled="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
