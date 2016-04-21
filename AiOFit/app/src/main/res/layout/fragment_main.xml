@@ -4,13 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.jeronimo.aiofit.MainFragment">
+    tools:context=".fragments.MainFragment">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Main Fragment"
-        android:id="@+id/textView2"
-        android:layout_gravity="center" />
+    <com.gigamole.library.ArcProgressStackView
+        android:id="@+id/apsv"
+        android:layout_width="280dp"
+        android:layout_height="274dp"
+        android:layout_gravity="center"
+        app:apsv_preview_colors="@array/polluted_waves"
+        app:apsv_model_bg_enabled="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
 </FrameLayout>

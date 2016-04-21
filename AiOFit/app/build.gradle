@@ -2,12 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
-
+    buildToolsVersion '23.0.3'
     defaultConfig {
         applicationId "com.example.jeronimo.aiofit"
-        minSdkVersion 14
-        targetSdkVersion 23
+        minSdkVersion 17
+        targetSdkVersion 17
         versionCode 1
         versionName "1.0"
     }
@@ -21,7 +20,7 @@ android {
                     def date = new Date();
                     def formattedDate = date.format('yyyyMMddHHmmss')
                     output.outputFile = new File(output.outputFile.parent,
-                            output.outputFile.name.replace("AiOFit","-" + formattedDate)
+                            output.outputFile.name.replace("AiOFit", "-" + formattedDate)
                             //for Debug use output.outputFile = new File(output.outputFile.parent,
                             //                             output.outputFile.name.replace("-debug", "-" + formattedDate)
                     )
@@ -29,28 +28,30 @@ android {
             }
         }
     }
-
     packagingOptions {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/LICENSE-FIREBASE.txt'
         exclude 'META-INF/NOTICE'
+    }
+    productFlavors {
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.android.support:design:23.3.0'
     compile 'info.hoang8f:fbutton:1.0.5'
     compile 'com.wrapp.floatlabelededittext:library:0.0.6'
     compile 'com.firebase:firebase-client-android:2.5.2+'
     repositories {
         mavenCentral()
         maven {
-            url  'http://dl.bintray.com/gigamole/maven/'
+            url 'http://dl.bintray.com/gigamole/maven/'
         }
     }
     compile 'com.github.gigamole.arcprogressstackview:library:+'
-
+    compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
 }

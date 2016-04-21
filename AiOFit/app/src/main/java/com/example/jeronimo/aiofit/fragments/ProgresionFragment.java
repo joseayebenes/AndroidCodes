@@ -1,6 +1,5 @@
-package com.example.jeronimo.aiofit;
+package com.example.jeronimo.aiofit.fragments;
 
-import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,25 +7,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.jeronimo.aiofit.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link GrasaFragment.OnFragmentInteractionListener} interface
+ * {@link ProgresionFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link GrasaFragment#newInstance} factory method to
+ * Use the {@link ProgresionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GrasaFragment extends Fragment {
+public class ProgresionFragment extends Fragment {
     // TODO: Rename and change types and number of parameters
-    public static GrasaFragment newInstance() {
-        GrasaFragment fragment = new GrasaFragment();
+    public static ProgresionFragment newInstance() {
+        ProgresionFragment fragment = new ProgresionFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
 
-    public GrasaFragment() {
+    public ProgresionFragment() {
         // Required empty public constructor
     }
 
@@ -39,7 +40,7 @@ public class GrasaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grasa, container, false);
+        return inflater.inflate(R.layout.fragment_progresion, container, false);
     }
 
     @Override
